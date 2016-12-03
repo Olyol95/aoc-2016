@@ -35,14 +35,13 @@ fn parse_opt( args: &Vec<String> ) {
     }
 
     let input_file = matches.opt_str( "i" );
-    let mut input = String::new();
-    match input_file {
-        Some( x ) => { input = read_input( &x ) },
+    let input = match input_file {
+        Some( x ) => { read_input( &x ) },
         None      => {
             println!( "No input file specified!" );
             exit( 1 );
         },
-    }
+    };
     
     let day = matches.opt_str( "d" );
     match day {
