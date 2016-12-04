@@ -10,6 +10,7 @@ use std::process::exit;
 
 mod day1;
 mod day2;
+mod day3;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -50,6 +51,7 @@ fn parse_opt( args: &Vec<String> ) {
             match x.as_ref() {
                 "1"  => day1::main( &input ),
                 "2"  => day2::main( &input ),
+                "3"  => day3::main( &input ),
                 _    => { 
                     println!( "Unknown day number {}", x );
                     exit( 1 );
